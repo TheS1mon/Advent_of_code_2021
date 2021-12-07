@@ -69,10 +69,3 @@ with open('03_input.txt') as txtInput:
                     if line[x] == '1':
                         linesTwo.remove(line)
         print(linesTwo)
-#print("Gamma: " + str(gamma) + "\nEpsilon: " + str(epsilon) + "\n\nIn Decimal:\n")
-#for item in gamma:
-#    gammaDec += str(item)
-#for item in epsilon:
-#    epsilonDec += str(item)
-#print("Gamma: " + str(int(gammaDec, 2)) + "\nEpsilon: " + str(int(epsilonDec, 2)))
-#print(str(int(gammaDec, 2) * int(epsilonDec, 2)))
