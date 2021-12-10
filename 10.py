@@ -11,14 +11,9 @@ def isClosingClamp(clamp):
 
 
 def getMatchingClamp(clamp):
-    if clamp == ")":
-        return "("
-    elif clamp == "]":
-        return "["
-    elif clamp == "}":
-        return "{"
-    elif clamp == ">":
-        return "<"
+    i = ")]}>".index(clamp)
+    return ["(", "[", "{", "<"][i]
+
 
 def getWrongLines(line):
     stack = []
@@ -67,24 +62,9 @@ def correctMissingLines(line):
         return score
 
 
-    nCount = 0
-    eCount = 0
-    gCount = 0
-    kgCount = 0
-    solutionStack = []
-    for bracket in stack:
-        if isClosingClamp(bracket):
-            if bracket == ")":
-                nCount = 0
-            elif bracket == "]":
-                eCount = 0
-            elif bracket == "}":
-                gCount = 0
-            elif bracket == ">":
-                kgCount = 0
-
-
 input = getInput("10_input.txt")
+
+# Part A
 errBrackets = []
 for line in input:
     tmp = getWrongLines(line)
